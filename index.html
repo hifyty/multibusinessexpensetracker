@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Chess Summer Boot Camp | Young Horizon Chess | Edmonton 2026</title>
+<meta name="description" content="Chess Summer Boot Camp for kids 6-12 in Edgemont, Edmonton. July 13-24, 2026. Limited seats. Register at younghorizonchess.ca">
+<link rel="canonical" href="https://younghorizonchess.ca">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--burg:#6B1A2A;--burg-d:#4A1020;--gold:#C9A84C;--gold-l:#E2C47A;--ivory:#F5F0E8;--ivory-d:#EDE7D9;--cream:#FAF7F2;--ink:#1A1210;--slate:#4A3F3A;--muted:#7A6E68}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.rv.on{opacity:1;transform:none}
+@keyframes fl{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-14px) rotate(3deg)}}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:68px;background:rgba(26,18,16,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,.2);transition:height .3s}
+.nl{display:flex;align-items:center;gap:12px}
+.nm{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--gold);line-height:1.1}
+.nav-sub{font-size:.58rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:2px}
+.nv{display:flex;align-items:center;gap:28px}
+.nv a{font-size:.75rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.55);transition:color .2s}
+.nv a:hover{color:var(--gold)}
+.nc{background:var(--gold)!important;color:var(--ink)!important;font-weight:700!important;padding:9px 22px!important;border-radius:2px!important}
+.mb{display:none;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer}
+.mm{display:none;position:fixed;top:68px;left:0;right:0;z-index:199;background:rgba(26,18,16,.98);padding:24px 32px;flex-direction:column;gap:16px;border-bottom:1px solid rgba(201,168,76,.15)}
+.mm.open{display:flex}
+.mm a{color:rgba(255,255,255,.7);font-size:1rem;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.hero{min-height:100vh;background:var(--burg-d);display:flex;align-items:center;position:relative;overflow:hidden}
+.hg{position:absolute;inset:0;background-image:repeating-conic-gradient(rgba(255,255,255,.025) 0% 25%,transparent 0% 50%);background-size:64px 64px}
+.hp{position:absolute;right:2%;top:0;bottom:0;width:46%;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.hc{position:relative;width:300px;height:300px}
+.hpc{position:absolute;animation:fl 4s ease-in-out infinite;filter:drop-shadow(0 8px 28px rgba(0,0,0,.55));font-size:6rem}
+.hpc:nth-child(2){top:42%;left:5%;font-size:3.8rem;animation-delay:.9s}
+.hpc:nth-child(3){bottom:8%;left:52%;font-size:4.2rem;animation-delay:1.8s}
+.hpc:nth-child(4){top:22%;right:2%;font-size:2.8rem;animation-delay:2.7s}
+.ht{position:relative;z-index:2;padding:130px 80px 80px;max-width:620px}
+.ht h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.8vw,5.4rem);font-weight:700;line-height:1.04;color:var(--ivory);margin-bottom:8px}
+.ht h1 em{font-style:italic;color:var(--gold);display:block}
+.hs{font-size:1.05rem;color:rgba(245,240,232,.52);line-height:1.75;margin:22px 0 34px;font-weight:300;max-width:470px}
+.hd{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:38px}
+.hdi{display:flex;align-items:center;gap:9px}
+.hdi strong{color:var(--ivory);font-weight:600;display:block}
+.hb{display:flex;gap:14px;flex-wrap:wrap}
+.bg{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--ink);font-weight:700;font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;padding:15px 32px;border-radius:2px;transition:all .25s;box-shadow:0 4px 22px rgba(201,168,76,.35)}
+.bg:hover{background:var(--gold-l);transform:translateY(-2px)}
+.bw{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(201,168,76,.42);color:var(--gold);font-weight:600;font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;padding:14px 28px;border-radius:2px;transition:all .25s}
+.bw:hover{border-color:var(--gold);background:rgba(201,168,76,.08)}
+.stats{background:var(--burg);border-top:1px solid rgba(201,168,76,.2);border-bottom:1px solid rgba(201,168,76,.2);display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background-color:rgba(201,168,76,.14)}
+.st{background:var(--burg);padding:28px 16px;text-align:center}
+.sn{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;color:var(--gold);line-height:1;margin-bottom:6px}
+.sl{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(245,240,232,.45)}
+section{padding:100px 80px}
+.se{font-family:'DM Mono',monospace;font-size:.67rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold-d);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.se::before{content:'';display:block;width:28px;height:1px;background:var(--gold-d)}
+.st{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:700;line-height:1.15;color:var(--ink);margin-bottom:20px}
+.st em{font-style:italic;color:var(--burg)}
+.sb{font-size:1rem;line-height:1.8;color:var(--slate);max-width:560px;font-weight:300}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:60px}
+.bd{width:100%;aspect-ratio:1;display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(8,1fr);border:3px solid var(--gold);box-shadow:0 20px 60px rgba(26,18,16,.2);border-radius:3px;overflow:hidden}
+.sq{display:flex;align-items:center;justify-content:center;font-size:clamp(.85rem,2.4vw,1.35rem)}
+.sq.d{background:var(--burg-d)}
+.sq.l{background:var(--ivory-d)}
+.sk{display:flex;align-items:flex-start;gap:16px;padding:18px 20px;background:var(--ivory);border:1px solid var(--ivory-d);border-radius:4px;border-left:3px solid var(--gold);transition:all .25s;margin-bottom:14px}
+.sk:hover{transform:translateX(5px)}
+.ski{font-size:1.35rem;flex-shrink:0;margin-top:2px}
+.skt{font-weight:600;font-size:.93rem;margin-bottom:4px;color:var(--ink)}
+.skd{font-size:.82rem;color:var(--muted);line-height:1.6;font-weight:300}
+.sch{background:var(--ink);position:relative;overflow:hidden}
+.sch .st{color:var(--ivory)}
+.sch .st em{color:var(--gold)}
+.sch .se{color:var(--gold-d)}
+.sch .sb{color:rgba(245,240,232,.52)}
+.dc{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.14);border-radius:4px;padding:24px;margin-bottom:20px;transition:all .3s}
+.dc:hover{background:rgba(201,168,76,.06);border-color:rgba(201,168,76,.32)}
+.dn{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--gold);margin-bottom:12px}
+.dl{display:flex;flex-direction:column;gap:8px}
+.di{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.03)}
+.di:last-child{border-bottom:none}
+.db{width:6px;height:6px;background:var(--gold);border-radius:50%;margin-top:6px;flex-shrink:0}
+.dt{font-size:.84rem;color:rgba(245,240,232,.75);line-height:1.5}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px;align-items:start}
+.pc{border-radius:4px;padding:36px 30px;position:relative;transition:all .3s;background:var(--ivory);border:1px solid var(--ivory-d)}
+.pc:hover{transform:translateY(-4px);box-shadow:0 10px 36px rgba(26,18,16,.16)}
+.pf{background:var(--burg-d);border:2px solid var(--gold);transform:translateY(-12px);box-shadow:0 24px 64px rgba(26,18,16,.22)}
+.pf .pt{color:var(--gold)}
+.pf .pa{color:var(--ivory)}
+.pf .pd{color:rgba(245,240,232,.52)}
+.pt{font-family:'Cormorant Garamond',serif;font-size:1.28rem;font-weight:700;color:var(--ink);margin-bottom:6px}
+.pa{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:var(--burg);line-height:1;margin:14px 0}
+.pd{font-size:.78rem;color:var(--muted);margin-bottom:22px;line-height:1.6}
+.pfs{display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
+.pfi{display:flex;gap:10px;font-size:.82rem;color:var(--slate);padding-bottom:10px;border-bottom:1px solid var(--ivory-d)}
+.pfi:last-child{border-bottom:none}
+.be{width:100%;padding:14px;border-radius:2px;font-size:.77rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;transition:all .25s;display:block;text-align:center;cursor:pointer;border:none;background:var(--burg);color:var(--ivory)}
+.be:hover{background:#8B2A3E}
+.bg2{background:var(--gold);color:var(--ink);box-shadow:0 4px 16px rgba(201,168,76,.32)}
+.bg2:hover{background:var(--gold-l);transform:translateY(-2px)}
+.rs{background:linear-gradient(138deg,var(--burg-d) 0%,var(--burg) 100%);position:relative;overflow:hidden}
+.rs::before{content:'';position:absolute;inset:0;background-image:repeating-conic-gradient(rgba(255,255,255,.018) 0% 25%,transparent 0% 50%);background-size:52px 52px}
+.rs .st{color:var(--ivory)}
+.rs .st em{color:var(--gold)}
+.rs .se{color:rgba(201,168,76,.65)}
+.rs .sb{color:rgba(245,240,232,.56)}
+.rg{display:grid;grid-template-columns:1fr 1.25fr;gap:72px;margin-top:52px;position:relative;z-index:1}
+.rc{background:rgba(245,240,232,.06);border:1px solid rgba(201,168,76,.18);border-radius:4px;padding:20px 24px;margin-bottom:20px}
+.rct{font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+.rcb{font-size:.82rem;color:rgba(245,240,232,.62);line-height:1.7;font-weight:300}
+.rcb strong{color:var(--ivory);font-weight:600}
+.fc{background:rgba(245,240,232,.07);backdrop-filter:blur(8px);border:1px solid rgba(201,168,76,.24);border-radius:6px;padding:40px}
+.fct{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:700;color:var(--ivory);margin-bottom:5px}
+.fcs{font-size:.78rem;color:rgba(245,240,232,.42);margin-bottom:26px}
+.ls{display:block;font-family:'DM Mono',monospace;font-size:.63rem;letter-spacing:2px;text-transform:uppercase;color:rgba(201,168,76,.62);margin-bottom:13px}
+.scg{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:13px}
+.scc{background:rgba(255,255,255,.07);border:2px solid rgba(201,168,76,.32);border-radius:8px;padding:20px 12px;text-align:center;transition:all .22s}
+.scc:hover{border-color:var(--gold);background:rgba(201,168,76,.1)}
+.scc.best{border-color:var(--gold);background:rgba(201,168,76,.15);box-shadow:0 0 26px rgba(201,168,76,.2)}
+.scl{font-size:.72rem;font-weight:700;color:var(--gold-l);margin-bottom:8px;letter-spacing:.5px}
+.scp{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#fff;line-height:1;margin-bottom:5px}
+.scn{font-size:.66rem;color:rgba(255,255,255,.5);margin-bottom:15px}
+.sca{display:block;background:var(--gold);color:var(--ink);padding:11px 8px;border-radius:4px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;text-decoration:none;transition:background .2s}
+.sca:hover{background:var(--gold-l)}
+.snt{text-align:center;font-size:.73rem;color:rgba(255,255,255,.55);line-height:1.8}
+.dv{height:1px;background:rgba(201,168,76,.22);margin:24px 0}
+.cb{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.28);border-radius:6px;padding:18px 22px;margin-top:22px}
+.cbt{font-size:.8rem;font-weight:700;color:var(--gold-l);margin-bottom:8px}
+.cbb{font-size:.8rem;color:rgba(255,255,255,.72);line-height:1.85}
+.cbb a{color:var(--gold-l);text-decoration:underline}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:52px}
+.fi{border:1px solid var(--ivory-d);border-radius:4px;overflow:hidden}
+.fq{padding:18px 22px;font-weight:600;font-size:.88rem;cursor:pointer;display:flex;align-items:center;justify-content:space-between;background:var(--ivory);transition:background .2s;user-select:none}
+.fq:hover{background:var(--ivory-d)}
+.fa{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;background:var(--cream);font-size:.84rem;color:var(--slate);line-height:1.7;font-weight:300;padding:0 22px}
+.fi.open .fq{background:var(--ivory-d)}
+.fi.open .fa{max-height:240px;padding:16px 22px}
+.nl2{background:var(--ivory);border-top:1px solid var(--ivory-d);padding:64px 80px;text-align:center}
+.nl2 h3{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:var(--ink);margin-bottom:8px}
+.nl2 p{color:var(--muted);font-size:.88rem;margin-bottom:28px;font-weight:300}
+.nf{display:flex;max-width:440px;margin:0 auto;border:1.5px solid var(--gold);border-radius:2px;overflow:hidden}
+.ni{flex:1;padding:13px 18px;background:var(--cream);color:var(--ink);font-size:.86rem;border:none;outline:none;font-family:'Jost',sans-serif}
+.ni::placeholder{color:var(--muted)}
+.nb{background:var(--gold);color:var(--ink);padding:13px 24px;font-weight:700;font-size:.73rem;letter-spacing:1.5px;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s;font-family:'Jost',sans-serif}
+.nb:hover{background:var(--gold-l)}
+.nn{font-size:.68rem;color:var(--muted);margin-top:12px}
+.ct{background:var(--burg);padding:40px 80px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;border-top:1px solid rgba(201,168,76,.2)}
+.ct h3{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:700;color:var(--ivory);margin-bottom:4px}
+.ct p{font-size:.82rem;color:rgba(245,240,232,.45);font-weight:300}
+.cl{display:flex;gap:20px;flex-wrap:wrap}
+.clk{display:flex;align-items:center;gap:8px;color:var(--gold);font-size:.86rem;font-weight:500;transition:color .2s}
+.clk:hover{color:var(--gold-l)}
+footer{background:var(--ink);padding:56px 80px 32px;border-top:1px solid rgba(201,168,76,.14)}
+.ft{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.fn{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+.ftg{font-size:.76rem;color:rgba(255,255,255,.3);line-height:1.7;font-weight:300}
+.fh{font-family:'DM Mono',monospace;font-size:.63rem;letter-spacing:2px;text-transform:uppercase;color:rgba(201,168,76,.48);margin-bottom:14px}
+.fl{display:flex;flex-direction:column;gap:10px}
+.fl a{font-size:.82rem;color:rgba(255,255,255,.38);transition:color .2s;font-weight:300}
+.fl a:hover{color:var(--gold)}
+.fb{padding-top:22px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between;font-size:.7rem;color:rgba(255,255,255,.22);flex-wrap:wrap;gap:8px}
+@media(max-width:1024px){
+  section{padding:80px 48px}
+  .ht{padding:120px 48px 80px}
+  .hp{display:none}
+  nav{padding:0 28px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .ag,.rg{grid-template-columns:1fr;gap:44px}
+  .pg,.fg{grid-template-columns:1fr}
+  .pf{transform:none}
+  .ft{grid-template-columns:1fr 1fr}
+  .nl2,.ct{padding:56px 48px}
+  footer{padding:56px 48px 32px}
+}
+@media(max-width:640px){
+  section{padding:60px 24px}
+  .ht{padding:108px 24px 60px}
+  nav{padding:0 20px}
+  .nv{display:none}
+  .mb{display:block}
+  .scg{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr}
+  .nl2,.ct{padding:48px 24px}
+  .nf{flex-direction:column;border:none}
+  .ni,.nb{border:1.5px solid var(--gold);border-radius:2px}
+  .nb{margin-top:8px;padding:13px}
+  footer{padding:40px 24px 24px}
+  .ct{flex-direction:column;align-items:flex-start}
+  .hb{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<nav id="mn">
+  <div class="nl">
+    <div>
+      <div class="nm">Young Horizon Chess</div>
+      <div class="nav-sub">River West Christian Church · 2026</div>
+    </div>
+  </div>
+  <div class="nv">
+    <a href="#about">About</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#register" class="nc">Register Now</a>
+  </div>
+  <button class="mb" onclick="tg()" aria-label="Menu">☰</button>
+</nav>
+<div class="mm" id="mb">
+  <a href="#about" onclick="tg()">About the Camp</a>
+  <a href="#schedule" onclick="tg()">Daily Schedule</a>
+  <a href="#pricing" onclick="tg()">Pricing</a>
+  <a href="#faq" onclick="tg()">FAQ</a>
+  <a href="#register" onclick="tg()" style="color:var(--gold);font-weight:700;">Register Now</a>
+</div>
+
+<section class="hero">
+  <div class="hg"></div>
+  <div class="hp">
+    <div class="hc">
+      <div class="hpc" style="top:0;left:46%;color:var(--gold);">&#9819;</div>
+      <div class="hpc" style="color:rgba(255,255,255,.45);">&#9822;</div>
+      <div class="hpc" style="color:rgba(255,255,255,.38);">&#9820;</div>
+      <div class="hpc" style="color:rgba(201,168,76,.55);">&#9821;</div>
+    </div>
+  </div>
+  <div class="ht">
+    <h1>Master the<br><em>Game of Kings</em></h1>
+    <p class="hs">A two-week intensive chess boot camp for curious minds aged 6-12. Build strategy, sharpen focus, and discover your inner grandmaster.</p>
+    <div class="hd">
+      <div class="hdi"><span>📅</span><span><strong>July 13-24, 2026</strong>Monday to Friday</span></div>
+      <div class="hdi"><span>⏰</span><span><strong>9:00 AM - 3:00 PM</strong>Full day program</span></div>
+      <div class="hdi"><span>📍</span><span><strong>River West Christian Church</strong>19815 45th Ave NW, Edmonton</span></div>
+    </div>
+    <div class="hb">
+      <a href="#register" class="bg">♟ Reserve Your Spot</a>
+      <a href="#about" class="bw">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="st rv"><div class="sn">10</div><div class="sl">Days of Training</div></div>
+  <div class="st rv"><div class="sn" style="font-size:1.6rem;line-height:1.3">Limited</div><div class="sl">Seats Available</div></div>
+  <div class="st rv"><div class="sn">6-12</div><div class="sl">Age Range</div></div>
+  <div class="st rv"><div class="sn">7</div><div class="sl">Trained Instructors</div></div>
+</div>
+
+<section id="about">
+  <div class="se">About the Program</div>
+  <h2 class="st rv">More than a game.<br><em>A life skill.</em></h2>
+  <p class="sb rv">Chess teaches children to think ahead, stay patient, and make confident decisions - skills that pay off in school, sports, and life. Our boot camp meets every child where they are, from first-time players to tournament-ready competitors.</p>
+  <div class="ag">
+    <div class="rv">
+      <div class="bd" id="bd"></div>
+    </div>
+    <div>
+      <div class="sk rv"><div class="ski">🧠</div><div><div class="skt">Critical Thinking</div><div class="skd">Children learn to evaluate options, anticipate consequences, and develop long-term plans - transferable to every subject in school.</div></div></div>
+      <div class="sk rv"><div class="ski">🎯</div><div><div class="skt">Focus &amp; Concentration</div><div class="skd">Each session builds sustained attention and the ability to tune out distractions - a growing challenge for today's kids.</div></div></div>
+      <div class="sk rv"><div class="ski">🤝</div><div><div class="skt">Sportsmanship &amp; Resilience</div><div class="skd">Learning to win gracefully and lose with dignity builds emotional intelligence that lasts a lifetime.</div></div></div>
+      <div class="sk rv"><div class="ski">💡</div><div><div class="skt">Creative Problem Solving</div><div class="skd">Every chess position is a unique puzzle. Children develop creative thinking as they explore countless possibilities.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sch" id="schedule">
+  <div class="se">Daily Schedule</div>
+  <h2 class="st rv">Two weeks.<br><em>Perfectly structured.</em></h2>
+  <p class="sb rv">Each day is carefully designed to balance instruction, guided play, and fun - keeping energy high while maximising learning. Skill groups are assigned on Day 1.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px;">
+    <div class="dc rv">
+      <div class="dn">Morning Block</div>
+      <div class="dl">
+        <div class="di"><div class="db"></div><div class="dt"><strong>8:45 AM - Drop-Off &amp; Warm-Up</strong><br>Puzzle stations, settle in</div></div>
+        <div class="di"><div class="db"></div><div class="dt"><strong>9:00 AM - Chess Lesson</strong><br>Skill-grouped instruction by level</div></div>
+        <div class="di"><div class="db"></div><div class="dt"><strong>10:30 AM - Break</strong><br>Snacks, stretch, fresh air</div></div>
+        <div class="di"><div class="db"></div><div class="dt"><strong>10:45 AM - Guided Play &amp; Drills</strong><br>Apply the lesson, practice tactics</div></div>
+      </div>
+    </div>
+    <div class="dc rv">
+      <div class="dn">Afternoon Block</div>
+      <div class="dl">
+        <div class="di"><div class="db"></div><div class="dt"><strong>12:00 PM - Lunch Break</strong><br>Bring your own lunch &amp; water bottle</div></div>
+        <div class="di"><div class="db"></div><div class="dt"><strong>1:00 PM - Activities &amp; Games</strong><br>Mini-tournaments, team chess, puzzles</div></div>
+        <div class="di"><div class="db"></div><div class="dt"><strong>2:15 PM - Tournament Time</strong><br>Friendly competitions &amp; challenges</div></div>
+        <div class="di"><div class="db"></div><div class="dt"><strong>2:45 PM - Wrap-Up &amp; Pickup</strong><br>Reflection, certificate days, pickup</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="se">Tuition &amp; Pricing</div>
+  <h2 class="st rv">Simple, <em>transparent pricing.</em></h2>
+  <p class="sb rv">Enroll early to lock in the best rate. All options include the full two-week program, materials, and a completion certificate.</p>
+  <div class="pg">
+    <div class="pc rv">
+      <div class="pt">Early Bird</div>
+      <div class="pa"><sup>$</sup>299</div>
+      <div class="pd">Register before <strong>May 31, 2026</strong> and save $51 per child.</div>
+      <div class="pfs">
+        <div class="pfi"><span>✓</span>Full 10-day program</div>
+        <div class="pfi"><span>✓</span>All chess materials</div>
+        <div class="pfi"><span>✓</span>Completion certificate</div>
+        <div class="pfi"><span>✓</span>Skill-level grouping</div>
+      </div>
+      <a href="#register" class="be">Register Early</a>
+    </div>
+    <div class="pc pf rv">
+      <div class="pt">Standard</div>
+      <div class="pa"><sup>$</sup>350</div>
+      <div class="pd">Full two-week boot camp. Everything your child needs to excel.</div>
+      <div class="pfs">
+        <div class="pfi"><span>✓</span>Full 10-day program</div>
+        <div class="pfi"><span>✓</span>All chess materials</div>
+        <div class="pfi"><span>✓</span>Completion certificate</div>
+        <div class="pfi"><span>✓</span>Skill-level grouping</div>
+      </div>
+      <a href="#register" class="be bg2">Secure Your Spot</a>
+    </div>
+    <div class="pc rv">
+      <div class="pt">Sibling Rate</div>
+      <div class="pa"><sup>$</sup>299</div>
+      <div class="pd">Second child from the same family registers at the early-bird rate, always.</div>
+      <div class="pfs">
+        <div class="pfi"><span>✓</span>Full 10-day program</div>
+        <div class="pfi"><span>✓</span>All chess materials</div>
+        <div class="pfi"><span>✓</span>Completion certificate</div>
+        <div class="pfi"><span>✓</span>Sibling discount applied</div>
+      </div>
+      <a href="#register" class="be">Register Sibling</a>
+    </div>
+  </div>
+</section>
+
+<section class="rs" id="register">
+  <div class="se">Registration</div>
+  <h2 class="st rv">Secure your child's <em>spot today.</em></h2>
+  <p class="sb rv">Seats are limited - register early to secure your place. Pay now online to confirm your spot instantly.</p>
+  <div class="rg">
+    <div>
+      <div class="rc rv"><div class="rct">📅 Camp Dates</div><div class="rcb"><strong>July 13-24, 2026</strong><br>Monday to Friday · 9:00 AM - 3:00 PM<br>Drop-off from 8:45 AM</div></div>
+      <div class="rc rv"><div class="rct">📍 Location</div><div class="rcb"><strong>Conference Room, River West Christian Church</strong><br>19815 45th Ave NW<br>Edmonton, AB T6M 0M4</div></div>
+      <div class="rc rv"><div class="rct">💳 Payment Options</div><div class="rcb">Pay securely online via Stripe - instant confirmation &amp; spot reserved immediately.</div></div>
+      <div class="rc rv"><div class="rct">↩️ Cancellation Policy</div><div class="rcb">Full refund before <strong>June 30, 2026</strong>.<br>50% refund before July 7.<br>No refund after July 7.</div></div>
+      <div class="rc rv"><div class="rct">📞 Questions?</div><div class="rcb"><strong><a href="mailto:support@younghorizonchess.ca">support@younghorizonchess.ca</a></strong><br><strong>437-216-3282</strong><br>We respond within 1 business day.</div></div>
+    </div>
+    <div class="fc rv">
+      <div class="fct">Register &amp; Pay</div>
+      <div class="fcs">Pay securely with Stripe for instant confirmation</div>
+      <span class="ls">💳 Pay now with Stripe (instant confirmation)</span>
+      <div class="scg">
+        <div class="scc"><div class="scl">EARLY BIRD</div><div class="scp">$299</div><div class="scn">Before May 31, 2026</div><a href="https://buy.stripe.com/5kQdR9dsQcW21zu5Vs0oM00" target="_blank" class="sca">Pay Now</a></div>
+        <div class="scc best"><div class="scl">STANDARD</div><div class="scp">$350</div><div class="scn">Full program access</div><a href="https://buy.stripe.com/8x23cv88w4pwba4cjQ0oM02" target="_blank" class="sca">Pay Now</a></div>
+        <div class="scc"><div class="scl">SIBLING RATE</div><div class="scp">$299</div><div class="scn">Second child discount</div><a href="https://buy.stripe.com/bJecN5dsQ7BIemg97E0oM01" target="_blank" class="sca">Pay Now</a></div>
+      </div>
+      <div class="snt">✓ Instant confirmation  •  ✓ Secure SSL  •  ✓ Spot reserved immediately</div>
+
+      <div class="cb">
+        <div class="cbt">Questions before registering?</div>
+        <div class="cbb"><a href="mailto:support@younghorizonchess.ca">support@younghorizonchess.ca</a><br><a href="tel:4372163282">437-216-3282</a><br>We respond within 1 business day.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="se">Frequently Asked Questions</div>
+  <h2 class="st rv">Everything you need <em>to know.</em></h2>
+  <div class="fg">
+    <div class="fi rv"><div class="fq" onclick="fq(this)">Does my child need to know how to play chess? <span>▾</span></div><div class="fa">Not at all! We welcome complete beginners. On Day 1 each child is assessed and placed in a skill-appropriate group. Our beginner sessions start from the very basics - how pieces move, board setup, and simple tactics.</div></div>
+    <div class="fi rv"><div class="fq" onclick="fq(this)">What should my child bring each day? <span>▾</span></div><div class="fa">A packed lunch and water bottle. Comfortable clothing. A positive attitude! All chess equipment, worksheets, and materials are provided. No need to bring your own chess set.</div></div>
+    <div class="fi rv"><div class="fq" onclick="fq(this)">What is the supervision ratio? <span>▾</span></div><div class="fa">We maintain a maximum of 1 adult per 10 children. Our team of 7 includes a Lead Instructor, 4 Assistant Instructors, a Camp Coordinator, and a Safety Floater. First aid is always on site.</div></div>
+    <div class="fi rv"><div class="fq" onclick="fq(this)">What is the cancellation and refund policy? <span>▾</span></div><div class="fa">Full refund for cancellations before June 30, 2026. A 50% refund is available between July 1-7. No refund after July 7 as materials and staffing will have been committed.</div></div>
+    <div class="fi rv"><div class="fq" onclick="fq(this)">What are the drop-off and pick-up rules? <span>▾</span></div><div class="fa">Drop-off begins at 8:45 AM. Pick-up is between 3:00-3:15 PM. A valid ID is required for anyone other than the registered guardian. Late pickups after 3:30 PM incur a $10 fee per 15-minute interval.</div></div>
+    <div class="fi rv"><div class="fq" onclick="fq(this)">Will there be an afterschool club? <span>▾</span></div><div class="fa">Yes! We plan to launch a weekly afterschool chess club starting September 2026. Boot camp participants get first access and priority enrollment. Subscribe to our newsletter to be notified first.</div></div>
+
+    <div class="fi rv"><div class="fq" onclick="fq(this)">Is the camp inclusive for kids with learning differences? <span>▾</span></div><div class="fa">Absolutely. We take a patient, inclusive approach. Please include any relevant information in the registration form and our team will be in touch to discuss accommodations before camp begins.</div></div>
+  </div>
+</section>
+
+<div class="nl2">
+  <h3>Stay in the loop ♟</h3>
+  <p>Be the first to hear about the afterschool club, tournaments, and future camps.</p>
+  <form class="nf" onsubmit="nl(event)">
+    <input class="ni" id="ne" type="email" placeholder="your@email.com" required>
+    <button class="nb" type="submit">Subscribe</button>
+  </form>
+  <div class="nn" id="nm">No spam. Just chess. Unsubscribe anytime.</div>
+</div>
+
+<div class="ct">
+  <div>
+    <h3>Have a question before registering?</h3>
+    <p>We're happy to help. Reach out any time.</p>
+  </div>
+  <div class="cl">
+    <a class="clk" href="mailto:support@younghorizonchess.ca">✉ support@younghorizonchess.ca</a>
+    <a class="clk" href="tel:4372163282">📞 437-216-3282</a>
+  </div>
+</div>
+
+<footer>
+  <div class="ft">
+    <div>
+      <div class="fn">♟ Young Horizon Chess</div>
+      <div class="ftg">Developing the next generation of strategic thinkers - one move at a time.<br>River West Christian Church · Edmonton, Alberta.<br><a href="https://younghorizonchess.ca" style="color:rgba(201,168,76,.5);">younghorizonchess.ca</a></div>
+    </div>
+    <div>
+      <div class="fh">Quick Links</div>
+      <div class="fl">
+        <a href="#about">About the Camp</a>
+        <a href="#schedule">Daily Schedule</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#register">Register Now</a>
+      </div>
+    </div>
+    <div>
+      <div class="fh">Contact</div>
+      <div class="fl">
+        <a href="mailto:support@younghorizonchess.ca">support@younghorizonchess.ca</a>
+        <a href="tel:4372163282">437-216-3282</a>
+        <a href="https://younghorizonchess.ca">younghorizonchess.ca</a>
+      </div>
+    </div>
+  </div>
+  <div class="fb">
+    <span>© 2026 Young Horizon Chess. All rights reserved.</span>
+    <span>younghorizonchess.ca</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+var b=document.getElementById('bd');
+if(!b)return;
+var p={'0,0':'♜','0,2':'♛','0,4':'♚','0,5':'♝','0,7':'♜','1,0':'♟','1,1':'♟','1,2':'♟','1,4':'♟','1,6':'♟','1,7':'♟','6,0':'♙','6,1':'♙','6,3':'♙','6,4':'♙','6,5':'♙','6,7':'♙','7,0':'♖','7,2':'♗','7,3':'♕','7,4':'♔','7,7':'♖'};
+for(var r=0;r<8;r++){for(var c=0;c<8;c++){
+var s=document.createElement('div');
+s.className='sq '+((r+c)%2===0?'l':'d');
+var k=r+','+c;
+if(p[k]){s.innerHTML=p[k];s.style.color=r<2?'rgba(26,18,16,.65)':'rgba(245,240,232,.88)';}
+b.appendChild(s);
+}}
+})();
+var ro=new IntersectionObserver(function(es){
+es.forEach(function(e,i){
+if(e.isIntersecting){
+setTimeout(function(){e.target.classList.add('on');},i*65);
+ro.unobserve(e.target);
+}
+});
+},{threshold:0.08,rootMargin:'0px 0px -36px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);});
+function tg(){document.getElementById('mb').classList.toggle('open');}
+document.addEventListener('click',function(e){
+if(!e.target.closest('nav')&&!e.target.closest('#mb'))document.getElementById('mb').classList.remove('open');
+});
+function fq(el){
+var it=el.closest('.fi');
+var ans=it.querySelector('.fa');
+var open=it.classList.contains('open');
+document.querySelectorAll('.fi.open').forEach(function(f){
+f.classList.remove('open');
+f.querySelector('.fa').style.maxHeight='0';
+});
+if(!open){
+it.classList.add('open');
+ans.style.maxHeight=ans.scrollHeight+'px';
+}
+}
+function nl(e){
+e.preventDefault();
+var em=document.getElementById('ne').value;
+var nm=document.getElementById('nm');
+nm.textContent='Thanks! We\'ll be in touch.';
+nm.style.color='var(--gold)';
+}
+</script>
+</body>
+</html>
