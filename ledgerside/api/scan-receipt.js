@@ -44,13 +44,19 @@ export default async function handler(req, res) {
 Return exactly this shape:
 {
   "description": "merchant name and brief item description in ~6 words",
-  "amount": "total amount as a number only, no $ sign, CAD",
+  "amount": "TOTAL amount charged (including GST/HST) as a number only, no $ sign, CAD",
+  "gst": "the GST or HST amount as a number only — look for lines labelled GST, HST, TPS, TVH, or Tax on the receipt. If not found, return 0",
   "date": "date in YYYY-MM-DD format",
   "category": "best matching category from this list: ${categories}",
-  "notes": "any useful tax notes such as GST/HST amount or business purpose"
+  "notes": "optional extra context e.g. vendor HST number, purpose of purchase"
 }
 
-If you cannot find a value, use empty string "" for text fields and "0" for amount. Never add markdown or explanation outside the JSON object.`,
+Important GST rules:
+- Canada GST is 5%. HST varies by province (13% Ontario, 15% Atlantic).
+- Look carefully for any tax line on the receipt before returning 0.
+- If the receipt shows HST instead of GST, still return it in the gst field.
+- Return the TOTAL amount including tax in the amount field.
+- Never add markdown or explanation outside the JSON object.`,
               },
             ],
           },

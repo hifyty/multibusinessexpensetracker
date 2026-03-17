@@ -1,5 +1,88 @@
 # LedgerSide — Deploy Guide
-## From zero to live on your phone in ~15 minutes
+## From zero to live on your phone in ~20 minutes
+
+---
+
+## What you need
+- A free GitHub account → github.com
+- A free Vercel account → vercel.com (sign in with GitHub)
+- A free Neon account → neon.tech (sign in with GitHub)
+- An Anthropic API key → console.anthropic.com
+- Node.js installed → nodejs.org (LTS version)
+
+---
+
+## Step 1 — Set up the project locally
+
+```bash
+cd ledgerside
+npm install
+```
+
+---
+
+## Step 2 — Create your free Neon database (5 minutes)
+
+1. Go to **neon.tech** → sign up free with GitHub
+2. Click **Create Project** → name it `ledgerside` → region: US East or Canada
+3. Once created, click **Dashboard** → find the **Connection string**
+4. It looks like: `postgresql://user:password@ep-xxx.us-east-2.aws.neon.tech/neondb?sslmode=require`
+5. Copy it — you'll need it in Step 4
+
+That's it. Neon automatically creates the expenses table the first time the app runs.
+
+---
+
+## Step 3 — Push to GitHub
+
+```bash
+git add .
+git commit -m "Add Neon database persistence"
+git push
+```
+
+---
+
+## Step 4 — Deploy to Vercel + add environment variables
+
+1. Go to **vercel.com** → your `ledgerside` project (or import fresh from GitHub)
+2. Go to **Settings → Environment Variables** and add ALL THREE:
+
+| Name | Value |
+|------|-------|
+| `DATABASE_URL` | your Neon connection string from Step 2 |
+| `ANTHROPIC_API_KEY` | your key from console.anthropic.com |
+
+3. Make sure both are checked for **Production**, **Preview**, and **Development**
+4. Go to **Deployments → Redeploy**
+
+---
+
+## Step 5 — Add to your phone home screen
+
+**iPhone:** Safari → Share → Add to Home Screen
+**Android:** Chrome → ⋮ → Add to Home Screen
+
+---
+
+## Your data is now permanent
+
+Every expense you add is instantly saved to Neon Postgres in the cloud.
+- ✅ Works on your phone, laptop, anywhere
+- ✅ Survives browser clears, app updates, redeployments
+- ✅ Free tier: 512MB storage (holds ~years of expenses)
+
+---
+
+## Updating the app
+
+```bash
+git add .
+git commit -m "your change"
+git push
+# Vercel auto-deploys in ~30 seconds. Your data is untouched.
+```
+
 
 ---
 
